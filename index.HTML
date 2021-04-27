@@ -1,0 +1,67 @@
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.CSS">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+        <title>Jazz Piano</title>
+    </head>
+    <header>
+        <h1> Jazz Piano </h1>
+    </header>
+    <body>
+        <div class="Chords">
+            <div data-key="65" class="key playing">
+                <kbd>A</kbd>
+                <span class="sound">Cmaj7</span></div>
+            <div data-key="83" class="key playing">
+                <kbd>S</kbd>
+                <span class="sound">Dmin7</span></div>
+            <div data-key="68" class="key playing">
+                <kbd>D</kbd>
+                <span class="sound">Emin7</span></div>
+            <div data-key="70" class="key playing">
+                <kbd>F</kbd>
+                <span class="sound">Fmaj9</span></div>
+            <div data-key="71" class="key playing">
+                <kbd>G</kbd>
+                <span class="sound">G7</span></div>
+            <div data-key="72" class="key playing">
+                <kbd>H</kbd>
+                <span class="sound">Amin9</span></div>
+            <div data-key="74" class="key playing">
+                <kbd>J</kbd>
+                <span class="sound">Bmin7b5</span></div>
+        </div>
+        <audio data-key="65" src="/Assets/Cmaj7.mp3"></audio>
+        <audio data-key="83" src="/Assets/Dmin7.mp3"></audio>
+        <audio data-key="68" src="/Assets/Emin7.mp3"></audio>
+        <audio data-key="70" src="/Assets/Fmaj9.mp3"></audio>
+        <audio data-key="71" src="/Assets/G7.mp3"></audio>
+        <audio data-key="72" src="/Assets/Am9.mp3"></audio>
+        <audio data-key="74" src="/Assets/Bm7b5.mp3"></audio>
+        </body>
+
+        <script>
+        window.addEventListener('keydown', function(e){
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            console.log(audio);
+            if(!audio) return;
+            audio.currentTime= 0;
+            audio.play();
+            key.classList.add('playing');
+        });
+
+        </script>
+    </html>
+
+    
+</head>
